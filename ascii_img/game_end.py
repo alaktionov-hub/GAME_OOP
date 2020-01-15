@@ -3,7 +3,6 @@ ASCII scene for GAMOVER .
 """
 
 import time
-#from clear_screen import clear_screen
 
 
 def game_over():
