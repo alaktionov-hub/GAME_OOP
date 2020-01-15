@@ -9,7 +9,6 @@ from ascii_img.help import rules
 from ascii_img.intro import intro
 from scripts.models import Enemy
 from scripts.models import Player
-# from exceptions import EnemyDown
 
 
 def play():
@@ -30,7 +29,8 @@ def play():
         print(player.score)
     conn = sqlite3.connect("data/scores.db")
     cursor = conn.cursor()
-    cursor.execute("CREATE TABLE IF NOT EXISTS scores (id serial, username text, score integer, dt text)")
+    cursor.execute(
+        "CREATE TABLE IF NOT EXISTS scores (id serial, username text, score integer, dt text)")
     cursor.execute("SELECT COUNT(*) FROM scores")
     new_id = cursor.fetchone()[0] + 1
     now = datetime.date.today()
@@ -59,11 +59,13 @@ if __name__ == '__main__':
             try:
                 conn = sqlite3.connect("data/scores.db")
                 cursor = conn.cursor()
-                cursor.execute("SELECT * FROM scores ORDER BY score DESC LIMIT 10")
+                cursor.execute(
+                    "SELECT * FROM scores ORDER BY score DESC LIMIT 10")
                 scores_result = cursor.fetchall()
                 if scores_result != []:
                     for result in scores_result:
-                        print(f"{result[1]}     |   {result[3]}   |   {result[2]}")
+                        print(
+                            f"{result[1]}     |   {result[3]}   |   {result[2]}")
                 else:
                     print("NO RESULTS IN DB!")
                 conn.close()
@@ -82,4 +84,3 @@ if __name__ == '__main__':
         pass
     finally:
         print("Good bye!")
-
