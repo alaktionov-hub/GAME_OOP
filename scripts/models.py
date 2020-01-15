@@ -8,8 +8,6 @@ from ascii_img.game_end import game_over
 from ascii_img.thief_win import thief_win
 from ascii_img.warrior_win import warrior_win
 from ascii_img.wizard_win import wizard_win
-#from exceptions import EnemyDown
-#from exceptions import GameOver
 
 
 class Enemy:
@@ -23,7 +21,6 @@ class Enemy:
     def decrease_lives(self):
         self.level -= 1
         if self.level == 0:
-            #raise EnemyDown()
             print("Enemy Down!")
         return self.level
 
@@ -33,7 +30,6 @@ class Player:
         self.name = name
         self.lives = lives
         self.score = score
-#        self.allowed_attacks = allowed_attacks
 
     @staticmethod
     def fight(attack, defense):
@@ -41,27 +37,21 @@ class Player:
         if attack == defense:
             res = 0
         elif attack == 2 and defense == 1:
-            #print("Wizard wins!")
             wizard_win()
             res = 1
         elif attack == 3 and defense == 2:
-            #print("Thief wins!")
             thief_win()
             res = 1
         elif attack == 1 and defense == 3:
-            #print("Warrior wins!")
             warrior_win()
             res = 1
         elif attack == 1 and defense == 2:
-            #print("Wizard wins!")
             wizard_win()
             res = -1
         elif attack == 2 and defense == 3:
-            #print("Thief wins!")
             thief_win()
             res = -1
         elif attack == 3 and defense == 1:
-            #print("Warrior wins!")
             warrior_win()
             res = -1
         return res
@@ -69,8 +59,6 @@ class Player:
     def decrease_lives(self):
         self.lives -= 1
         if self.lives == 0:
-           # raise GameOver
-            #print ("You loosed last live! Game over!")
             game_over()
         return self.lives
 

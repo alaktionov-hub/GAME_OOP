@@ -56,7 +56,6 @@ def game_over():
 			""")
 
     time.sleep(2)
-    # clear_screen()
 
     print(r"""
 

@@ -2,7 +2,6 @@
 ASCII scene for game begining
 """
 import time
-# from ascii_img.clear_screen import clear_screen
 
 
 def intro():
@@ -50,7 +49,6 @@ def intro():
 
     print('\n'+'\n')
 
-#   clear_screen()
     time.sleep(1)
     print(r"""
                       _____  _____   _____ ______ _   _ _______    _____          __  __ ______ 
@@ -73,7 +71,6 @@ def intro():
                                                                  """)
 
     time.sleep(2)
-#   clear_screen()
     print(r"""
 
                                        TYPE START TO DIVE INTO THE BATTLE!

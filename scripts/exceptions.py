@@ -10,7 +10,6 @@ class EnemyDown(Exception):
     Rise jutt exceptions
     -------
     '''
-    # pass  # If left just pass pylint unhappy with Unnecessary pass statement (unnecessary-pass)
     print("Enemy Down!")
 
 
@@ -21,5 +20,4 @@ class GameOver(Exception):
     Rise jutt exceptions
     -------
     '''
-    # pass # If left just pass pylint unhappy with Unnecessary pass statement (unnecessary-pass)
     print("Game over!")
